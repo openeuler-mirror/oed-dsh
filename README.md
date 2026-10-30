@@ -31,7 +31,13 @@
 
 ### 安装
 
-在 DSH 的 Plugins 页，用 Git 地址安装：
+**方式 A：npm 包（发布后，推荐）**
+
+```bash
+dsh plugin --profile web add dsh-oed@0.1.0
+```
+
+**方式 B：Git 地址（Plugins 页）**
 
 ```
 Plugins → 添加插件 → Git 地址
@@ -40,7 +46,11 @@ https://atomgit.com/openeuler/oed-dsh.git
 
 <p align="center"><img src="docs/assets/install.png" alt="添加oed-dsh插件" width="960" /></p>
 
-安装后启用该 bundle 并**重启 DSH**。也可用本地目录（开发调试）或 npm 包名 `dsh-oed`（发布后），详见 [docs/INSTALL.md](docs/INSTALL.md)。
+**方式 C：本地目录（开发调试）**
+
+Plugins → 添加插件 → 本地目录 → 选中 `oed-dsh` 目录。
+
+安装后启用该 bundle 并**重启 DSH**。详见 [docs/INSTALL.md](docs/INSTALL.md)。
 
 ### 试一句
 
