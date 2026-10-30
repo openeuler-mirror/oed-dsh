@@ -1,5 +1,5 @@
 {
-  "name": "dsh-oed",
+  "name": "oed-dsh",
   "version": "0.1.0",
   "description": "openEuler Infra for DeepSeek Harness (DSH) — discover and call openEuler community services (CVE, SIG docs, packages, meetings, forum, issues/PRs, EulerMaker) with no CLI install.",
   "type": "module",

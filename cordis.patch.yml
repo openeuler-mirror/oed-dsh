@@ -2,4 +2,4 @@
 # The row id must stay stable: profile patches and settings address it by id.
 - insert:
     - id: oed-dsh
-      name: dsh-oed
+      name: oed-dsh
