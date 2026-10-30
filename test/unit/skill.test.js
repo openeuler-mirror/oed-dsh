@@ -20,3 +20,9 @@ test("skill body stays small and names all three tools", () => {
     assert.ok(skill.content.includes(tool), `skill body missing tool: ${tool}`);
   }
 });
+
+test("skill teaches on-demand login on auth_required", () => {
+  for (const kw of ["auth_required", "oed_login", "懒加载", "自动重试"]) {
+    assert.ok(skill.content.includes(kw), `skill body missing lazy-auth keyword: ${kw}`);
+  }
+});

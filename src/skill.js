@@ -12,7 +12,7 @@ export const skill = {
   name: "oed-dsh",
   source: "oed-dsh",
   description:
-    "openEuler 社区数据查询与调用（SIG 组、CVE 安全公告、软件包、例会/会议、论坛、邮件列表、Issue/PR、EulerMaker 构建、AtomGit 仓库），含 oneid 登录。当任务需要查询或调用 openEuler 社区服务时加载本 skill，只用 oed_services / oed_operation_schema / oed_invoke 访问 Infra 网关（写操作先 oed_login），不要用 web search、不要手写 curl。",
+    "openEuler 社区数据查询与调用（SIG 组、CVE 安全公告、软件包、例会/会议、论坛、邮件列表、Issue/PR、EulerMaker 构建、AtomGit 仓库），含 oneid 登录。当任务需要查询或调用 openEuler 社区服务时加载本 skill，只用 oed_services / oed_operation_schema / oed_invoke 访问 Infra 网关（写操作按需自动登录），不要用 web search、不要手写 curl。",
   whenToUse:
     "任务涉及 openEuler 社区、SIG、CVE、软件包、会议、论坛、邮件列表、Issue/PR、EulerMaker、AtomGit 时。",
   content: `# openEuler Infra（oed-dsh）
@@ -27,8 +27,9 @@ export const skill = {
 
 ## 认证（写操作 / identity-gated 服务需要）
 
-- \`oed_auth_status\` —— 查看是否已登录。
+- **按需（懒加载）登录**：写操作 / identity-gated 服务未登录时（\`auth_required\`），**不要只报错**——自动调用 \`oed_login\` 发起登录、把授权链接展示给用户；用户授权完成后**自动重试原操作**。只读操作永不触发登录。
 - \`oed_login\` —— 登录：不带参数发起，返回一个**可直接点击的授权链接**（可能已预填用户码），把链接展示给用户；用户授权后，用返回的 \`deviceCode\` 再次调用 \`oed_login\`（会自动轮询直到完成）。
+- \`oed_auth_status\` —— 查看是否已登录。
 - \`oed_auth_logout\` —— 登出。
 
 ## 硬规则
@@ -37,6 +38,7 @@ export const skill = {
 - 调用前先 \`oed_operation_schema\` 拿参数，不要凭记忆猜 flag。
 - 写操作需：\`allowMutations\` 开启 + 已登录（\`oed_login\` / \`OED_TOKEN\`）+ **写前审批**。
 - 写操作前先展示将执行的 service/operation/body，用 \`ask_user_question\` 弹选项（「执行」「取消」），用户确认后再 \`oed_invoke\`。
+- 只读操作永不触发登录、不弹提示。
 
 ## 常见任务对照
 
@@ -53,6 +55,6 @@ export const skill = {
 
 - 报 \`service_not_found\` / \`method_not_found\` → 先 \`oed_services\`，再 \`oed_operation_schema\` 看可用操作。
 - 报 \`network_error\` → 稍后重试（插件自带退避重试）。
-- 报 \`auth_required\` → 先 \`oed_login\` 登录，或设 \`OED_TOKEN\`。
+- 报 \`auth_required\` → **可恢复信号**：自动调用 \`oed_login\` 发起登录、展示授权链接；用户授权后自动重试原操作；授权被拒 / 超时则明确告知并停止，不无限重试。
 - 报 \`mutation_blocked\` → 写操作需开启 \`allowMutations\`。`,
 };

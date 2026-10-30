@@ -82,7 +82,7 @@ openEuler 社区服务通过 Infra API 网关暴露，`oed-cli`（Python）已�
 ## 6. 约束
 
 - **平台/治理**：主仓 AtomGit（先个人，后迁 `openEuler/oed-dsh`）；Apache-2.0；openEuler CLA/DCO 按 SIG 要求。
-- **分发**：npm 包（暂定名 `dsh-oed`）+ DSH 插件市场索引（URL 用非个人稳定地址，方案见架构 ADR）。
+- **分发**：npm 包（暂定名 `oed-dsh`）+ DSH 插件市场索引（URL 用非个人稳定地址，方案见架构 ADR）。
 - **语言/运行时**：ESM JavaScript；Node ≥20 特性；不 import DSH 私有包于 core。
 - **契约源**：网关 discovery feed 与 OpenAPI 是唯一事实源；oed-cli 作为参考实现，不与插件做代码级共享。
 

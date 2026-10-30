@@ -27,10 +27,10 @@ DSH → **Plugins → 添加插件 → 本地目录**，选中 `oed-dsh` 目录�
 命令行（推荐）：
 
 ```bash
-dsh plugin --profile web add dsh-oed@0.1.0
+dsh plugin --profile web add oed-dsh@0.1.0
 ```
 
-或 DSH → **Plugins → 添加插件 → 包名**，输入 `dsh-oed`。
+或 DSH → **Plugins → 添加插件 → 包名**，输入 `oed-dsh`。
 
 ## 启用
 

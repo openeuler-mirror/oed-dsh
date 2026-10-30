@@ -23,7 +23,7 @@
 
 ## 这是什么
 
-`oed-dsh`（npm 包名 `dsh-oed`）是 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 的一个插件。它让 DSH 中的 Agent 直接调用 openEuler Infra 网关下的社区服务——CVE 安全公告、软件包、SIG 文档、会议、论坛、邮件列表、Issue/PR、EulerMaker 构建、AtomGit 仓库——**无需安装 Python，也无需 `oed-cli`**。
+`oed-dsh` 是 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 的一个插件。它让 DSH 中的 Agent 直接调用 openEuler Infra 网关下的社区服务——CVE 安全公告、软件包、SIG 文档、会议、论坛、邮件列表、Issue/PR、EulerMaker 构建、AtomGit 仓库——**无需安装 Python，也无需 `oed-cli`**。
 
 它把 openEuler 社区能力封装成三条可对话的 CVE 工作流，外加一套运行时自发现的通用调用工具，以及 oneid 认证。
 
@@ -34,7 +34,7 @@
 **方式 A：npm 包（发布后，推荐）**
 
 ```bash
-dsh plugin --profile web add dsh-oed@0.1.0
+dsh plugin --profile web add oed-dsh@0.1.0
 ```
 
 **方式 B：Git 地址（Plugins 页）**

@@ -68,7 +68,7 @@ export async function invoke({
   if (write && !token) {
     throw new OedError(`${desc.method} ${desc.displayName} requires authentication`, {
       kind: "auth_required",
-      hint: "run oed_login first, or set OED_TOKEN",
+      hint: "start the login flow via oed_login, then retry this operation (or set OED_TOKEN)",
     });
   }
 
