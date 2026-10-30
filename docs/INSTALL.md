@@ -7,7 +7,7 @@
 DSH → **Plugins → 添加插件 → Git 地址**，粘贴：
 
 ```
-https://atomgit.com/<owner>/oed-dsh.git
+https://atomgit.com/openeuler/oed-dsh.git
 ```
 
 安装完成后点 **Enable now**，**重启 DSH** 即可（见下文「启用」）。
@@ -17,14 +17,20 @@ https://atomgit.com/<owner>/oed-dsh.git
 ### 本地目录（开发 / 调试）
 
 ```bash
-git clone https://atomgit.com/<owner>/oed-dsh.git
+git clone https://atomgit.com/openeuler/oed-dsh.git
 ```
 
 DSH → **Plugins → 添加插件 → 本地目录**，选中 `oed-dsh` 目录。
 
 ### npm 包（发布后）
 
-DSH → **Plugins → 添加插件 → 包名**，输入 `dsh-oed`。
+命令行（推荐）：
+
+```bash
+dsh plugin --profile web add dsh-oed@0.1.0
+```
+
+或 DSH → **Plugins → 添加插件 → 包名**，输入 `dsh-oed`。
 
 ## 启用
 
