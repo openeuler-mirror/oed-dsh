@@ -35,7 +35,7 @@
 
 ```
 Plugins → 添加插件 → Git 地址
-https://atomgit.com/<owner>/oed-dsh.git
+https://atomgit.com/openeuler/oed-dsh.git
 ```
 
 <p align="center"><img src="docs/assets/install.png" alt="添加oed-dsh插件" width="960" /></p>

@@ -4,6 +4,12 @@
   "description": "openEuler Infra for DeepSeek Harness (DSH) — discover and call openEuler community services (CVE, SIG docs, packages, meetings, forum, issues/PRs, EulerMaker) with no CLI install.",
   "type": "module",
   "license": "MulanPSL-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://atomgit.com/openeuler/oed-dsh.git"
+  },
+  "homepage": "https://atomgit.com/openeuler/oed-dsh",
+  "author": "openEuler community",
   "keywords": [
     "dsh",
     "dsh-plugin",

@@ -7,7 +7,7 @@
 DSH → **Plugins → 添加插件 → Git 地址**，粘贴：
 
 ```
-https://atomgit.com/<owner>/oed-dsh.git
+https://atomgit.com/openeuler/oed-dsh.git
 ```
 
 安装完成后点 **Enable now**，**重启 DSH** 即可（见下文「启用」）。
@@ -17,7 +17,7 @@ https://atomgit.com/<owner>/oed-dsh.git
 ### 本地目录（开发 / 调试）
 
 ```bash
-git clone https://atomgit.com/<owner>/oed-dsh.git
+git clone https://atomgit.com/openeuler/oed-dsh.git
 ```
 
 DSH → **Plugins → 添加插件 → 本地目录**，选中 `oed-dsh` 目录。
