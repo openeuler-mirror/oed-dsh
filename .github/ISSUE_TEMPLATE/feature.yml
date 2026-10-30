@@ -1,0 +1,36 @@
+name: 需求 / Feature request
+description: 提议一个新能力（需求 → 设计 → 实现 → 验收，见 CONTRIBUTING.md）
+title: "[feature] "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: motivation
+    attributes:
+      label: 动机
+      description: 要解决什么问题？谁会用？
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 方案
+      description: 期望的行为 / 接口 / 涉及的数据源
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 验收标准
+      description: 什么算完成（可验证、可量化）
+    validations:
+      required: true
+  - type: textarea
+    id: design
+    attributes:
+      label: 设计文档
+      description: 若已产出，贴 docs/design/features/<name>/requirements.md 与 design.md 的链接
+  - type: input
+    id: scope
+    attributes:
+      label: 组件 scope
+      description: 对应 commit scope，如 core / tools / cve-triage / ui

@@ -1,0 +1,68 @@
+{
+  "name": "dsh-oed",
+  "version": "0.1.0",
+  "description": "openEuler Infra for DeepSeek Harness (DSH) — discover and call openEuler community services (CVE, SIG docs, packages, meetings, forum, issues/PRs, EulerMaker) with no CLI install.",
+  "type": "module",
+  "license": "MulanPSL-2.0",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "openeuler",
+    "openeuler-infra",
+    "agent-plugin"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "src/",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg"
+  ],
+  "engines": {
+    "node": ">=20",
+    "dsh": ">=0.2.0 <0.3.0"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "format:check": "prettier --check .",
+    "format": "prettier --write .",
+    "test": "node --test",
+    "test:unit": "node --test \"test/unit/**/*.test.js\"",
+    "test:contract": "node --test \"test/contract/**/*.test.js\"",
+    "ci": "npm run lint && npm run format:check && npm run test && npm run test:contract",
+    "commitlint": "commitlint --from HEAD~1 --to HEAD --verbose",
+    "smoke": "node scripts/smoke.mjs",
+    "classify": "node scripts/classify.mjs"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^21.2.4",
+    "@commitlint/config-conventional": "^21.2.4",
+    "@deepseek-ai/dsh-tools": "0.2.1-rc.2",
+    "@deepseek-ai/schemastery": "3.18.5",
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.13.0",
+    "prettier": "^3.9.10"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-plugin-manager"
+      ]
+    }
+  }
+}

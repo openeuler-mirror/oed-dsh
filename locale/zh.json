@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "openEuler Infra",
+    "description": "无需安装 CLI，直接在 DSH 中发现并调用 openEuler 社区服务（CVE、SIG 文档、软件包、例会、论坛、Issue/PR、EulerMaker）。"
+  }
+}

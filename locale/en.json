@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "openEuler Infra",
+    "description": "Discover and call openEuler community services (CVE, SIG docs, packages, meetings, forum, issues/PRs, EulerMaker) without installing a CLI."
+  }
+}

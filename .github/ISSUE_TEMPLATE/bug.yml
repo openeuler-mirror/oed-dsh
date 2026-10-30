@@ -1,0 +1,31 @@
+name: Bug report
+description: 报告一个缺陷
+title: "[bug] "
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: 现象
+      description: 发生了什么？
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: 复现步骤
+      description: 给出最小复现（工具名 + 入参 + 期望/实际结果）
+    validations:
+      required: true
+  - type: textarea
+    id: env
+    attributes:
+      label: 环境
+      description: DSH 版本、插件版本、Node 版本、操作系统
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: 日志/错误信息
+      description: 粘贴相关错误（注意脱敏 token）
