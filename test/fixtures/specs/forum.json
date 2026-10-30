@@ -1,0 +1,28 @@
+{
+  "openapi": "3.0.3",
+  "info": { "title": "forum", "version": "1.0.0" },
+  "paths": {
+    "/forum/topics": {
+      "post": {
+        "operationId": "API_createTopicPostPM",
+        "summary": "Create a topic post",
+        "description": "Create a new topic post in the community forum",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["title", "raw"],
+                "properties": {
+                  "title": { "type": "string" },
+                  "raw": { "type": "string" }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

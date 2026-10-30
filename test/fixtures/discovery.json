@@ -1,0 +1,25 @@
+{
+  "kind": "discovery#servicesListByCommunity",
+  "communities": {
+    "openeuler": [
+      {
+        "name": "openeuler/cve",
+        "service_name": "cve",
+        "community": "openeuler",
+        "title": "CVE security notices",
+        "version": "1.0.0",
+        "description": "CVE security notices and affected products",
+        "base_url": "https://apig.osinfra.cn"
+      },
+      {
+        "name": "openeuler/forum",
+        "service_name": "forum",
+        "community": "openeuler",
+        "title": "Community forum",
+        "version": "1.0.0",
+        "description": "Community forum topics and posts",
+        "base_url": "https://apig.osinfra.cn"
+      }
+    ]
+  }
+}

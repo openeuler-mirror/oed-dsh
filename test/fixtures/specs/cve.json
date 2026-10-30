@@ -1,0 +1,22 @@
+{
+  "openapi": "3.0.3",
+  "info": { "title": "cve", "version": "1.0.0" },
+  "paths": {
+    "/cve-security-notice-server/securitynotice/getByCveId": {
+      "get": {
+        "operationId": "getSecurityNoticeByCveId",
+        "summary": "Query a security notice by CVE id",
+        "description": "Return the security notice for a CVE id",
+        "parameters": [
+          {
+            "name": "cveId",
+            "in": "query",
+            "required": true,
+            "schema": { "type": "string" },
+            "description": "CVE ID"
+          }
+        ]
+      }
+    }
+  }
+}
