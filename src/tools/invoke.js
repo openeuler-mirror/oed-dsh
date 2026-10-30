@@ -30,9 +30,9 @@ export const tool = {
 };
 
 export async function run(runtime, args, signal) {
-  // Re-read auth.json so a login during the session is picked up immediately
-  // (runtime.token is cached at activation). OED_TOKEN env still wins.
-  const token = process.env.OED_TOKEN || loadAuth()?.access_token || runtime.token || undefined;
+  // Re-read auth.json so login/logout during the session is picked up immediately.
+  // OED_TOKEN env wins; no fallback to runtime.token (that cache would defeat logout).
+  const token = process.env.OED_TOKEN || loadAuth()?.access_token || undefined;
   return coreInvoke({
     discovery: runtime.discovery,
     service: args.service,
