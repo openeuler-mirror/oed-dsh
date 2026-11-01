@@ -7,7 +7,7 @@
  * <select> while atomgitToken keeps the text control.
  */
 window.__ModuleLoader__.load({
-  id: "dsh-oed",
+  id: "oed-dsh",
   factory(require) {
     const React = require("react");
     const h = React.createElement;
@@ -406,7 +406,7 @@ window.__ModuleLoader__.load({
           ctx.slots.register(
             {
               name: "plugins.bundle.config",
-              key: "dsh-oed",
+              key: "oed-dsh",
               locale: NS,
               inject: () => form.inject(),
             },
