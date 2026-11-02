@@ -2,6 +2,17 @@
 
 本文件遵循 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本遵循 [SemVer](https://semver.org/lang/zh-CN/)。
 
+## [0.1.1] - 2026-11-02
+
+### Added
+
+- oneid 登录按需触发（懒加载，ADR-38）：写操作 / identity-gated 服务未登录时，agent 遇到 `auth_required` 自动发起 `oed_login`、展示授权链接、授权后自动重试原操作；只读操作永不触发登录。
+
+### Fixed
+
+- `oed_auth_logout` 后 `oed_invoke` 仍使用旧 token：去掉 `runtime.token` 回退，只依赖 `OED_TOKEN` 或新鲜 auth.json 读取，登出立即生效。
+- 改名 `dsh-oed` → `oed-dsh` 后 client.js 模块 `id`/`key` 仍为旧名，导致 client-modules 重复注册、web boot 失败；统一改为 `oed-dsh`。
+
 ## [0.1.0] - 2026-10-30
 
 ### Added
