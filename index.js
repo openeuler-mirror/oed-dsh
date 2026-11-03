@@ -32,6 +32,7 @@ import { tool as cvePostTool, run as runCvePost } from "./src/tools/cve-post-com
 import { tool as cveFixTool, run as runCveFix } from "./src/tools/cve-fix-prepare.js";
 import { tool as cveOpenPrTool, run as runCveOpenPr } from "./src/tools/cve-open-pr.js";
 import { tool as cveBuildTool, run as runCveBuild } from "./src/tools/cve-build.js";
+import { tool as cveBuildWaitTool, run as runCveBuildWait } from "./src/tools/cve-build-wait.js";
 import {
   tool as cveRepoGetFileTool,
   run as runCveRepoGetFile,
@@ -124,6 +125,7 @@ export function apply(ctx, config) {
   register(ctx, runtime, { ...cveFixTool, run: runCveFix });
   register(ctx, runtime, { ...cveOpenPrTool, run: runCveOpenPr });
   register(ctx, runtime, { ...cveBuildTool, run: runCveBuild });
+  register(ctx, runtime, { ...cveBuildWaitTool, run: runCveBuildWait });
   register(ctx, runtime, { ...cveRepoGetFileTool, run: runCveRepoGetFile });
   register(ctx, runtime, { ...cveForkPushTool, run: runCveForkPush });
   register(ctx, runtime, { ...cvePrGetTool, run: runCvePrGet });
