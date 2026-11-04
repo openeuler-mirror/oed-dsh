@@ -28,6 +28,7 @@ test("apply registers all tools and skills without schema errors", () => {
     "cve_fix_prepare",
     "cve_open_pr",
     "cve_build",
+    "cve_build_wait",
     "cve_repo_get_file",
     "cve_fork_push",
     "cve_pr_get",

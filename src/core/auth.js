@@ -129,6 +129,15 @@ export function loadAuth(path = authFilePath(process.env)) {
   }
 }
 
+/**
+ * Resolve the active oneid token: `OED_TOKEN` env wins, else the fresh
+ * auth.json access_token. Tools must use this single helper instead of the
+ * activation-time `runtime.token` cache so login/logout take effect immediately.
+ */
+export function resolveToken(env = process.env) {
+  return env?.OED_TOKEN || loadAuth(authFilePath(env))?.access_token || undefined;
+}
+
 /** Write auth.json atomically-ish with mode 0600. */
 export function saveAuth(data, path = authFilePath(process.env)) {
   mkdirSync(dirname(path), { recursive: true });

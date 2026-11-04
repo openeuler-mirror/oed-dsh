@@ -12,6 +12,7 @@ import {
   saveAuth,
   clearAuth,
   tokenFingerprint,
+  resolveToken,
 } from "../../src/core/auth.js";
 
 test("startDeviceFlow requests a device code with a form-encoded body", async () => {
@@ -94,5 +95,15 @@ test("clearAuth removes auth.json and tokenFingerprint never leaks the token", (
   assert.equal(fp.length, 12);
   assert.ok(!fp.includes("secret"));
   assert.equal(tokenFingerprint(null), null);
+  rmSync(dir, { recursive: true, force: true });
+});
+
+test("resolveToken prefers OED_TOKEN env and falls back to auth.json", () => {
+  const dir = mkdtempSync(join(tmpdir(), "oed-auth-"));
+  saveAuth({ access_token: "stored-token" }, join(dir, "auth.json"));
+
+  assert.equal(resolveToken({ OED_TOKEN: "env-token", OED_CACHE_DIR: dir }), "env-token");
+  assert.equal(resolveToken({ OED_CACHE_DIR: dir }), "stored-token");
+  assert.equal(resolveToken({ OED_CACHE_DIR: join(dir, "empty") }), undefined);
   rmSync(dir, { recursive: true, force: true });
 });
