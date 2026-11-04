@@ -206,6 +206,7 @@ window.__ModuleLoader__.load({
           h("input", {
             id,
             type: show ? "text" : "password",
+            autoComplete: "new-password",
             value: value ?? "",
             disabled,
             onChange: (event) => onEdit(event.target.value),
