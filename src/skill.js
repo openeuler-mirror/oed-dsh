@@ -51,6 +51,8 @@ export const skill = {
 | Issue/PR | \`quickissue\`（看板）/ \`ag\`（AtomGit，需登录） |
 | EulerMaker 构建 | \`eulermaker\` 的查询类操作 |
 
+> 非 CVE 社区服务（SIG 搜索 / 例会 / 论坛 / 软件包）的详细 quirks（forum 托管头、search body 形状、响应路径）见 \`oed-community\` skill。
+
 ## 排错
 
 - 报 \`service_not_found\` / \`method_not_found\` → 先 \`oed_services\`，再 \`oed_operation_schema\` 看可用操作。
