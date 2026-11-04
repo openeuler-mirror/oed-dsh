@@ -1,5 +1,5 @@
 import { invoke as coreInvoke } from "../core/invoke.js";
-import { loadAuth } from "../core/auth.js";
+import { resolveToken } from "../core/auth.js";
 
 export const tool = {
   name: "oed_invoke",
@@ -30,9 +30,8 @@ export const tool = {
 };
 
 export async function run(runtime, args, signal) {
-  // Re-read auth.json so login/logout during the session is picked up immediately.
-  // OED_TOKEN env wins; no fallback to runtime.token (that cache would defeat logout).
-  const token = process.env.OED_TOKEN || loadAuth()?.access_token || undefined;
+  // Resolve the token fresh so login/logout during the session takes effect.
+  const token = resolveToken();
   return coreInvoke({
     discovery: runtime.discovery,
     service: args.service,
