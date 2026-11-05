@@ -2,6 +2,20 @@
 
 本文件遵循 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本遵循 [SemVer](https://semver.org/lang/zh-CN/)。
 
+## [0.2.0] - 2026-11-05
+
+### Added
+
+- CVE PR 审查联动修正 triage 结论：审查发现与 issue 结论不一致时，起草并发布 cve-manager 5 模块修正评论（`cve-review` skill，ADR-39）。
+- CI 构建轮询：`cve_build_wait` 轮询 eulermaker / pkgcontrib 构建状态到终态（成功 / 失败 / 超时，ADR-40）。
+- 非 CVE 社区服务：`oed-community` skill 封装 forum / search / meeting / software 的 quirks 与常见任务（托管头、body 形状、响应路径，ADR-41）。
+- 插件自帮助：`oed-help` skill 内置安装 / 配置 / 常见问题排错（ADR-42）。
+- 用户反馈闭环：`oed_diagnose` 诊断本地状态（版本 / 登录态 / token / 配置）+ `oed_report_issue` 引导提 bug / feature issue（ADR-43）。
+
+### Fixed
+
+- 配置页 AtomGit 令牌输入框被浏览器自动填充（加 `autoComplete="new-password"` 阻止）。
+
 ## [0.1.1] - 2026-11-02
 
 ### Added
