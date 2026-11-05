@@ -1,4 +1,5 @@
 import { OedError } from "./errors.js";
+import { VERSION } from "./version.js";
 
 export const DEFAULT_GATEWAY = "https://api-gateway.osinfra.cn";
 
@@ -9,7 +10,7 @@ const RETRY_MAX_MS = 4_000;
 
 /** Browser-style headers the gateway's CloudWAF expects. No default Referer. */
 const DEFAULT_HEADERS = {
-  "User-Agent": "oed-dsh/0.1.0",
+  "User-Agent": `oed-dsh/${VERSION}`,
   Accept: "application/json",
   "Accept-Language": "en-US,en;q=0.9",
 };

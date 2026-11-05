@@ -1,11 +1,5 @@
-import { readFileSync } from "node:fs";
-import { fileURLToPath } from "node:url";
-import { dirname, join } from "node:path";
 import { loadAuth, tokenFingerprint } from "../core/auth.js";
-
-const VERSION = JSON.parse(
-  readFileSync(join(dirname(fileURLToPath(import.meta.url)), "..", "..", "package.json"), "utf8"),
-).version;
+import { VERSION } from "../core/version.js";
 
 export const tool = {
   name: "oed_diagnose",
