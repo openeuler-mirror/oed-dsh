@@ -7,8 +7,8 @@
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MulanPSL--2.0-3da639?style=flat-square" alt="MulanPSL-2.0" /></a>
-  <a href="#工具与技能"><img src="https://img.shields.io/badge/tools-19-0ea5e9?style=flat-square" alt="19 tools" /></a>
-  <a href="#工具与技能"><img src="https://img.shields.io/badge/skills-5-7c3aed?style=flat-square" alt="5 skills" /></a>
+  <a href="#工具与技能"><img src="https://img.shields.io/badge/tools-21-0ea5e9?style=flat-square" alt="21 tools" /></a>
+  <a href="#工具与技能"><img src="https://img.shields.io/badge/skills-6-7c3aed?style=flat-square" alt="6 skills" /></a>
   <img src="https://img.shields.io/badge/gateway-13_services-0891b2?style=flat-square" alt="13 gateway services" />
 </p>
 
@@ -77,6 +77,7 @@ Plugins → 添加插件 → 本地目录 → 选中 `oed-dsh` 目录。
 | **CVE PR 审查**（`cve-review`）        | 按清单审查 CVE 修复 PR（含 sync 反合 PR），输出 approve / request-changes / needs-human                      | 「审查 `<PR 链接>`」                         |
 | **通用网关调用**                       | `oed_services` / `oed_operation_schema` / `oed_invoke` 运行时自发现并调用网关操作                            | 「查 CVE-2019-10082 公告」                   |
 | **非 CVE 社区服务**（`oed-community`） | 封装 SIG 文档搜索、例会、论坛、软件包等服务的 quirks 与常见任务                                              | 「查某天例会」·「搜 SIG 文档」               |
+| **自帮助与反馈**                       | `oed-help` 回答使用/配置/排错；`oed_diagnose` 诊断本地状态 + `oed_report_issue` 提 bug/feature issue         | 「这个插件怎么配」·「报错帮我提 issue」      |
 | **oneid 认证**                         | `oed_login` 设备流登录，为 identity-gated 服务（EulerMaker 提交、pkgcontrib 提交等）提供身份                 | 「登录 openEuler」                           |
 
 **默认只读**：写操作（发评论、提 PR、发 review、网关写操作）需 AtomGit 令牌或 oneid 登录 + 写前审批。
@@ -93,9 +94,9 @@ Plugins → 添加插件 → 本地目录 → 选中 `oed-dsh` 目录。
 
 ## 工具与技能
 
-**19 个工具**：`oed_services` · `oed_operation_schema` · `oed_invoke` · `oed_login` · `oed_auth_status` · `oed_auth_logout` · `cve_issue` · `cve_triage_comment` · `cve_package_version` · `cve_post_comment` · `cve_fix_prepare` · `cve_repo_get_file` · `cve_fork_push` · `cve_open_pr` · `cve_build` · `cve_build_wait` · `cve_pr_get` · `cve_review_pr` · `cve_post_review`
+**21 个工具**：`oed_services` · `oed_operation_schema` · `oed_invoke` · `oed_login` · `oed_auth_status` · `oed_auth_logout` · `oed_diagnose` · `oed_report_issue` · `cve_issue` · `cve_triage_comment` · `cve_package_version` · `cve_post_comment` · `cve_fix_prepare` · `cve_repo_get_file` · `cve_fork_push` · `cve_open_pr` · `cve_build` · `cve_build_wait` · `cve_pr_get` · `cve_review_pr` · `cve_post_review`
 
-**5 个技能**：`oed-dsh`（路由）· `cve-triage` · `cve-repair` · `cve-review` · `oed-community`
+**6 个技能**：`oed-dsh`（路由）· `cve-triage` · `cve-repair` · `cve-review` · `oed-community` · `oed-help`
 
 ## 配置
 

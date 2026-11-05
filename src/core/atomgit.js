@@ -102,6 +102,27 @@ export async function postIssueComment(owner, repo, number, body, { token, signa
   }
 }
 
+/** Create an issue. The owner is in the path, repo in the body (AtomGit convention). */
+export async function createIssue(owner, repo, { title, body, token, signal } = {}) {
+  requireAtomgitToken(token);
+  const url = `${ATOMGIT_API}/repos/${owner}/issues?access_token=${encodeURIComponent(token)}`;
+  try {
+    const { data } = await requestJson(url, {
+      method: "POST",
+      headers: buildHeaders({ json: true }),
+      body: { repo, title, body },
+      signal,
+    });
+    return {
+      ok: true,
+      number: data?.number,
+      html_url: data?.html_url ?? data?.web_url,
+    };
+  } catch (err) {
+    throw redactToken(err, token);
+  }
+}
+
 /**
  * Create a pull request against an AtomGit repo (fork → upstream supported).
  * `head` is "branch" for same-repo or "forkOwner:branch" for cross-repo;
