@@ -24,6 +24,7 @@ export const skill = {
 
 Plugins 页 → openEuler Infra 配置页，4 项：AtomGit 令牌 / 风险自动处理 / 本地预检 / 允许写操作。
 环境变量（CI 场景）：\`ATOMGIT_TOKEN\` / \`OED_TOKEN\` / \`OED_APP_ID\` / \`OED_CACHE_DIR\`。
+填完 AtomGit 令牌后，可让 agent 用 \`oed_diagnose\` 校验令牌是否有效（返回 \`atomgitTokenValid\`）。
 
 ## 常见问题排错
 
