@@ -45,6 +45,12 @@ import { tool as cvePostReviewTool, run as runCvePostReview } from "./src/tools/
 import { tool as oedLoginTool, run as runOedLogin } from "./src/tools/oed-login.js";
 import { tool as oedAuthStatusTool, run as runOedAuthStatus } from "./src/tools/oed-auth-status.js";
 import { tool as oedAuthLogoutTool, run as runOedAuthLogout } from "./src/tools/oed-auth-logout.js";
+import { tool as oedDiagnoseTool, run as runOedDiagnose } from "./src/tools/oed-diagnose.js";
+import {
+  tool as oedReportIssueTool,
+  run as runOedReportIssue,
+} from "./src/tools/oed-report-issue.js";
+import { skill as helpSkill } from "./src/skill-help.js";
 
 export const name = "oed-dsh";
 export const inject = ["tools", "skills"];
@@ -135,6 +141,8 @@ export function apply(ctx, config) {
   register(ctx, runtime, { ...oedLoginTool, run: runOedLogin });
   register(ctx, runtime, { ...oedAuthStatusTool, run: runOedAuthStatus });
   register(ctx, runtime, { ...oedAuthLogoutTool, run: runOedAuthLogout });
+  register(ctx, runtime, { ...oedDiagnoseTool, run: runOedDiagnose });
+  register(ctx, runtime, { ...oedReportIssueTool, run: runOedReportIssue });
 
   // Routing skill: makes openEuler tasks auto-route to the oed tools instead
   // of web search. Registered on the skill registry (host plane).
@@ -143,4 +151,5 @@ export function apply(ctx, config) {
   ctx.skills.register(cveRepairSkill);
   ctx.skills.register(cveReviewSkill);
   ctx.skills.register(communitySkill);
+  ctx.skills.register(helpSkill);
 }
