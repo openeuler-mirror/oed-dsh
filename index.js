@@ -21,6 +21,7 @@ import { skill } from "./src/skill.js";
 import { skill as cveTriageSkill } from "./src/skill-cve-triage.js";
 import { skill as cveRepairSkill } from "./src/skill-cve-repair.js";
 import { skill as cveReviewSkill } from "./src/skill-cve-review.js";
+import { skill as communitySkill } from "./src/skill-community.js";
 
 import { tool as servicesTool, run as runServices } from "./src/tools/services.js";
 import { tool as schemaTool, run as runSchema } from "./src/tools/operation-schema.js";
@@ -141,4 +142,5 @@ export function apply(ctx, config) {
   ctx.skills.register(cveTriageSkill);
   ctx.skills.register(cveRepairSkill);
   ctx.skills.register(cveReviewSkill);
+  ctx.skills.register(communitySkill);
 }

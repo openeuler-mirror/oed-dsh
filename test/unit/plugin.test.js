@@ -40,7 +40,7 @@ test("apply registers all tools and skills without schema errors", () => {
   ]);
   assert.deepEqual(
     skills.map((s) => s.name),
-    ["oed-dsh", "cve-triage", "cve-repair", "cve-review"],
+    ["oed-dsh", "cve-triage", "cve-repair", "cve-review", "oed-community"],
   );
   for (const skill of skills) {
     // DSH requires a runtime skill to carry string source + content to load.
