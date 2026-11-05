@@ -159,3 +159,20 @@ test("read-only POST queries are allowed", async () => {
   assert.equal(result.method, "POST");
   assert.deepEqual(result.response, { code: 0 });
 });
+
+test("large responses truncate with a totalChars + hint signal", async () => {
+  const big = { data: "x".repeat(5000) };
+  globalThis.fetch = async () => new Response(JSON.stringify(big), { status: 200 });
+  const result = await invoke({
+    discovery: fakeDiscovery(),
+    service: "cve",
+    operation: "getSecurityNoticeByCveId",
+    params: { cveId: "CVE-2019-10082" },
+    maxResponseChars: 100,
+  });
+  assert.equal(result.ok, true);
+  assert.equal(result.response.truncated, true);
+  assert.equal(result.response.totalChars, JSON.stringify(big).length);
+  assert.ok(result.response.preview.length <= 100);
+  assert.match(result.response.hint, /maxResponseChars/);
+});
