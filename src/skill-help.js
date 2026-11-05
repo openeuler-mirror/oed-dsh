@@ -12,6 +12,16 @@ export const skill = {
 
 这是 oed-dsh 插件的使用帮助。用户问插件相关问题时，直接据此回答。
 
+## 快速上手（示例）
+
+新会话里直接问，agent 会自动路由到 oed 工具：
+
+- 「列出 openEuler 服务」
+- 「查 CVE-2019-10082 的安全公告」
+- 「分析 https://atomgit.com/src-openeuler/ffmpeg/issues/267 并生成影响性分析评论」
+- 「审查 https://atomgit.com/src-openeuler/postgresql-17/pulls/32」
+- 「查某天例会」·「搜 SIG 文档」·「论坛最新帖」（非 CVE 社区服务，见 oed-community）
+
 ## 安装
 
 - npm：\`dsh plugin --profile web add oed-dsh@<版本>\`
