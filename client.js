@@ -18,7 +18,7 @@ window.__ModuleLoader__.load({
 
     const en = {
       description:
-        "Configure openEuler Infra: AtomGit token, risk handling, and local verification.",
+        "Configure openEuler Infra: AtomGit token, risk handling, local verification, and write operations.",
       atomgitToken: "AtomGit token",
       atomgitTokenHint:
         "Personal access token for posting CVE impact-analysis comments and opening fix PRs. Create at https://atomgit.com/setting/token-classic/create. Leave blank to disable.",
@@ -45,7 +45,7 @@ window.__ModuleLoader__.load({
     };
 
     const zh = {
-      description: "配置 openEuler Infra：AtomGit 令牌、风险自动化处理、本地预检。",
+      description: "配置 openEuler Infra：AtomGit 令牌、风险自动化处理、本地预检、允许写操作。",
       atomgitToken: "AtomGit 令牌",
       atomgitTokenHint:
         "用于发布 CVE 影响性分析评论、提交修复 PR 的个人访问令牌。创建地址 https://atomgit.com/setting/token-classic/create。留空表示不配置。",

@@ -40,11 +40,23 @@ dsh plugin --profile web add oed-dsh@0.1.0
 
 ## 配置
 
-在 Plugins 页 → **openEuler Infra** 的配置页，有三个字段：
+在 Plugins 页 → **openEuler Infra** 的配置页，有四个字段：
 
-- **AtomGit 令牌**：写操作（发评论 / 提 PR / 发 review）需要；留空则只读功能照常可用，写操作报 `atomgit_token_missing`。PAT 创建：<https://atomgit.com/setting/token-classic/create>（勾选仓库写权限）。也可设环境变量 `ATOMGIT_TOKEN=<PAT>`。
+- **AtomGit 令牌**：写操作（发评论 / fork 推送修复代码 / 提 PR / 发 review）需要；留空则只读功能照常可用，写操作报 `atomgit_token_missing`。PAT 创建：<https://atomgit.com/setting/token-classic/create>（勾选仓库写权限）。也可设环境变量 `ATOMGIT_TOKEN=<PAT>`。
 - **风险自动处理**（`riskAutoApprove`）：`never`（默认，中高风险都停下询问）/ `medium` / `high`。
 - **本地预检**（`localVerify`）：`lightweight`（默认）/ `none` / `docker`。
+- **允许写操作**（`allowMutations`）：网关写操作（EulerMaker 提交、pkgcontrib 提交、forum 发帖等）的开关；开启后还需 oneid 登录 + 写前审批，关闭时写操作报 `mutation_blocked`。
+
+### 环境变量（CI / 无界面场景）
+
+与 oed-cli 兼容，已登录 oed-cli 的用户可直接复用凭据：
+
+| 变量            | 作用                                                           |
+| --------------- | -------------------------------------------------------------- |
+| `ATOMGIT_TOKEN` | AtomGit 个人令牌，等价于配置页的「AtomGit 令牌」               |
+| `OED_TOKEN`     | openEuler oneid access token，设了它就跳过 `oed_login`         |
+| `OED_APP_ID`    | 自定义 oneid OAuth 应用标识；默认用内置的 openEuler Infra 应用 |
+| `OED_CACHE_DIR` | oneid 凭据（`auth.json`）的存储目录                            |
 
 ## 快速验证
 
