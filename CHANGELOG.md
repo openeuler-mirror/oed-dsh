@@ -2,6 +2,21 @@
 
 本文件遵循 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本遵循 [SemVer](https://semver.org/lang/zh-CN/)。
 
+## [0.2.1] - 2026-11-06
+
+### Added
+
+- 配置校验：`oed_diagnose` 真实校验 AtomGit 令牌是否有效（`atomgitTokenValid` / `atomgitTokenUser`，issue #9）。
+- 快速上手：`oed-help` 内置「试一句」示例，用户问「能干啥」直接给出示例（issue #10）。
+- 大响应控制：结果超限截断时补 `totalChars` + 分页 / 调高上限提示（issue #12）。
+- 深度 i18n：21 个工具 + 6 个技能描述双语（英文 + 中文），并新增英文 README（issue #13）。
+
+### Fixed
+
+- `allowMutations` 未解包导致写操作只读守卫失效（安全修复），并修复 `oed_diagnose` 输出非无损 JSON。
+- 网关网络错误补「稍后重试 / 检查连通性」提示（issue #11）。
+- 安装命令不再写死版本号，改用裸包名安装 latest（`oed-dsh@0.1.x` → `oed-dsh`）。
+
 ## [0.2.0] - 2026-11-05
 
 ### Added
