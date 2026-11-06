@@ -21,7 +21,15 @@ export function stripApiPrefix(operationId) {
  */
 export function sanitizeJson(value) {
   if (value === undefined) return null;
-  if (typeof value === "number" && !Number.isFinite(value)) return null;
+  if (typeof value === "number") {
+    if (!Number.isFinite(value)) return null;
+    // Normalize negative zero so the value survives a lossless JSON round trip.
+    return value === 0 && 1 / value === -Infinity ? 0 : value;
+  }
+  // Functions, symbols and bigints are not JSON-serializable; drop them like undefined.
+  if (typeof value === "function" || typeof value === "symbol" || typeof value === "bigint") {
+    return null;
+  }
   if (Array.isArray(value)) return value.map(sanitizeJson);
   if (value !== null && typeof value === "object") {
     const out = {};
