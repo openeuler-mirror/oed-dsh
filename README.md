@@ -5,6 +5,8 @@
 <h1 align="center">oed-dsh</h1>
 <h3 align="center">让 DeepSeek Harness 里的 Agent 直接调用 openEuler 社区服务——零安装、零 CLI、零 Python。</h3>
 
+<p align="center">[English](README.en.md) · 中文</p>
+
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MulanPSL--2.0-3da639?style=flat-square" alt="MulanPSL-2.0" /></a>
   <a href="#工具与技能"><img src="https://img.shields.io/badge/tools-21-0ea5e9?style=flat-square" alt="21 tools" /></a>
