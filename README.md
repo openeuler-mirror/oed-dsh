@@ -34,8 +34,10 @@
 **方式 A：npm 包（发布后，推荐）**
 
 ```bash
-dsh plugin --profile web add oed-dsh@0.1.1
+dsh plugin --profile web add oed-dsh
 ```
+
+默认装最新版；要锁版本可写 `oed-dsh@<版本>`。
 
 **方式 B：Git 地址（Plugins 页）**
 
