@@ -4,7 +4,7 @@ import { normalizeBaseUrl } from "../core/http.js";
 export const tool = {
   name: "oed_operation_schema",
   description:
-    "Inspect one openEuler service operation: HTTP method/path/url, query/path parameters with their flags, request body schema, and a usage string. Use this before calling oed_invoke so you pass the right arguments.",
+    "Inspect one openEuler service operation: HTTP method/path/url, query/path parameters with their flags, request body schema, and a usage string. Use this before calling oed_invoke so you pass the right arguments. 探查一个 openEuler 服务操作：HTTP 方法/路径/url、参数表、body schema 与 usage；调用 oed_invoke 前先用它确认参数。",
   parameters: {
     service: {
       type: "string",
