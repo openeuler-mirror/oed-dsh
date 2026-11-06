@@ -101,7 +101,12 @@ export async function invoke({
   const serialized = JSON.stringify(data);
   const response =
     serialized.length > maxResponseChars
-      ? { truncated: true, preview: serialized.slice(0, maxResponseChars) }
+      ? {
+          truncated: true,
+          totalChars: serialized.length,
+          preview: serialized.slice(0, maxResponseChars),
+          hint: `response exceeds maxResponseChars (${maxResponseChars}); use pagination params or raise maxResponseChars to get more`,
+        }
       : data;
 
   return {

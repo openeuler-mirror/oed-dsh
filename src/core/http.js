@@ -70,6 +70,7 @@ async function requestOnce(url, { method, headers, body, signal, timeoutMs }) {
       throw new OedError(`${method} ${url} timed out`, {
         kind: "network_error",
         retryable: true,
+        hint: "请求超时；稍后重试，或检查网关/网络连通性",
         cause: err,
       });
     }
@@ -83,6 +84,7 @@ async function requestOnce(url, { method, headers, body, signal, timeoutMs }) {
     throw new OedError(`${method} ${url} failed: ${err?.message ?? err}`, {
       kind: "network_error",
       retryable: true,
+      hint: "网关可能临时不可达；稍后重试，或刷新缓存",
       cause: err,
     });
   }

@@ -75,3 +75,15 @@ test("sanitizeJson strips undefined and non-finite numbers losslessly", () => {
   // survives a lossless JSON round-trip
   assert.deepEqual(JSON.parse(JSON.stringify(out)), out);
 });
+
+test("sanitizeJson normalizes -0 and drops non-JSON types", () => {
+  assert.equal(sanitizeJson(-0), 0);
+  assert.equal(
+    sanitizeJson(() => {}),
+    null,
+  );
+  assert.equal(sanitizeJson(Symbol("x")), null);
+  assert.equal(sanitizeJson(1n), null);
+  const nested = sanitizeJson({ fn: () => {}, n: -0, s: "ok" });
+  assert.deepEqual(nested, { fn: null, n: 0, s: "ok" });
+});

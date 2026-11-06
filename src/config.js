@@ -23,7 +23,7 @@ export function buildRuntime(config = {}, env = {}) {
   return {
     discovery,
     community,
-    allowMutations: config.allowMutations ?? false,
+    allowMutations: readConfig(config.allowMutations) ?? false,
     readOnlyAllowlist: Array.isArray(config.readOnlyAllowlist) ? config.readOnlyAllowlist : [],
     maxResponseChars: config.maxResponseChars ?? 64_000,
     token: env.OED_TOKEN || storedAuth?.access_token || undefined,
