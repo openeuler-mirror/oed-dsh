@@ -7,9 +7,9 @@ export const skill = {
   name: "oed-community",
   source: "oed-dsh",
   description:
-    "openEuler 非 CVE 社区服务的调用细节（SIG 文档搜索、例会、论坛、软件包、文档搜索等）：封装 forum 托管头、search body 形状、meeting/software 常见操作与响应路径。当任务涉及这些非 CVE 社区服务时使用。",
+    "Non-CVE openEuler community service details (SIG doc search, meetings, forums, packages, doc search): forum managed headers, search body shape, meeting/software operations and response paths. openEuler 非 CVE 社区服务细节（SIG 搜索、例会、论坛、软件包、文档搜索）：forum 托管头、search body 形状、meeting/software 操作与响应路径。",
   whenToUse:
-    "任务涉及 SIG 文档搜索、例会/会议、论坛、软件包查询、文档搜索等非 CVE openEuler 社区服务时。",
+    "Tasks touching SIG doc search, meetings, forums, package lookup, or doc search (non-CVE openEuler community services). 涉及 SIG 文档搜索、例会、论坛、软件包查询、文档搜索等非 CVE 服务的任务。",
   content: `# 非 CVE 社区服务（oed-community）
 
 用 \`oed_services\` / \`oed_operation_schema\` / \`oed_invoke\` 调用非 CVE 社区服务。下面是关键 quirks 与常见任务对照。

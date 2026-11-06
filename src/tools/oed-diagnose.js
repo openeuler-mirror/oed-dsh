@@ -5,7 +5,7 @@ import { VERSION } from "../core/version.js";
 export const tool = {
   name: "oed_diagnose",
   description:
-    "诊断 oed-dsh 插件的本地状态：登录状态、AtomGit 令牌是否配置并校验其有效性、配置项汇总、插件版本。只读，不泄露敏感信息。",
+    "Diagnose the oed-dsh plugin's local state: login status, whether the AtomGit token is configured and valid, config summary, plugin version. 诊断 oed-dsh 插件的本地状态：登录状态、AtomGit 令牌是否配置并校验其有效性、配置项汇总、插件版本。只读，不泄露敏感信息。",
   parameters: {},
 };
 

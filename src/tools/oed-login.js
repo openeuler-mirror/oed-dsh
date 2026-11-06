@@ -24,7 +24,7 @@ function delay(ms, signal) {
 export const tool = {
   name: "oed_login",
   description:
-    "openEuler oneid 登录（RFC 8628 device flow）。不带 deviceCode 时发起登录并返回一个可直接点击的授权链接；带上 deviceCode 时自动轮询直至完成登录（存 auth.json + allow-list）。",
+    "openEuler oneid login (RFC 8628 device flow); without deviceCode starts login and returns a clickable authorization link, with deviceCode polls until done. openEuler oneid 登录（RFC 8628 device flow）。不带 deviceCode 时发起登录并返回一个可直接点击的授权链接；带上 deviceCode 时自动轮询直至完成登录（存 auth.json + allow-list）。",
   parameters: {
     deviceCode: {
       type: "string",
