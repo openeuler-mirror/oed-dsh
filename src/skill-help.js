@@ -6,8 +6,9 @@ export const skill = {
   name: "oed-help",
   source: "oed-dsh",
   description:
-    "openEuler Infra（oed-dsh）插件的使用帮助：安装、配置、常见问题排错，以及遇到 bug 时的反馈方式。当用户问插件本身怎么用 / 怎么配 / 报错怎么办时使用。",
-  whenToUse: "任务涉及 oed-dsh 插件本身的使用、配置、安装、排错、或反馈 bug 时。",
+    "Help for the oed-dsh plugin: install, configure, troubleshoot, and report bugs. oed-dsh 插件帮助：安装、配置、排错、反馈 bug。",
+  whenToUse:
+    "Tasks about the oed-dsh plugin itself: usage, config, install, troubleshooting, or bug reports. 涉及 oed-dsh 插件本身的使用、配置、安装、排错、反馈 bug 的任务。",
   content: `# openEuler Infra 帮助（oed-help）
 
 这是 oed-dsh 插件的使用帮助。用户问插件相关问题时，直接据此回答。

@@ -4,7 +4,7 @@ import { resolveToken } from "../core/auth.js";
 export const tool = {
   name: "oed_invoke",
   description:
-    "Call one openEuler service operation and return the JSON response. Read-only by default (GET only). Use oed_services then oed_operation_schema to discover the service, operation, and required parameters first; never guess parameter names.",
+    "Call one openEuler service operation and return the JSON response. Read-only by default (GET only). Use oed_services then oed_operation_schema to discover the service, operation, and required parameters first; never guess parameter names. 调用一个 openEuler 服务操作并返回 JSON 响应（默认只读 GET）；先用 oed_services / oed_operation_schema 发现服务与参数，不要猜参数名。",
   parameters: {
     service: { type: "string", required: true, description: "Service short name, e.g. 'cve'." },
     operation: {

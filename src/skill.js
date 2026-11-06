@@ -12,9 +12,9 @@ export const skill = {
   name: "oed-dsh",
   source: "oed-dsh",
   description:
-    "openEuler 社区数据查询与调用（SIG 组、CVE 安全公告、软件包、例会/会议、论坛、邮件列表、Issue/PR、EulerMaker 构建、AtomGit 仓库），含 oneid 登录。当任务需要查询或调用 openEuler 社区服务时加载本 skill，只用 oed_services / oed_operation_schema / oed_invoke 访问 Infra 网关（写操作按需自动登录），不要用 web search、不要手写 curl。",
+    "Query and call openEuler community services (SIG groups, CVE advisories, packages, meetings, forums, mail lists, issues/PRs, EulerMaker builds, AtomGit repos) with oneid auth; use only oed_services / oed_operation_schema / oed_invoke against the Infra gateway (writes auto-login on demand), never web-search or hand-write curl. 查询和调用 openEuler 社区服务（SIG 组、CVE 公告、软件包、例会、论坛、邮件列表、Issue/PR、EulerMaker 构建、AtomGit 仓库），含 oneid 登录；只用 oed_services/oed_operation_schema/oed_invoke 访问网关（写操作按需自动登录），不要 web search、不要手写 curl。",
   whenToUse:
-    "任务涉及 openEuler 社区、SIG、CVE、软件包、会议、论坛、邮件列表、Issue/PR、EulerMaker、AtomGit 时。",
+    "Tasks touching openEuler community, SIG, CVE, packages, meetings, forums, mail lists, issues/PRs, EulerMaker, or AtomGit. 涉及 openEuler 社区、SIG、CVE、软件包、会议、论坛、邮件列表、Issue/PR、EulerMaker、AtomGit 的任务。",
   content: `# openEuler Infra（oed-dsh）
 
 用下面这些工具访问 openEuler Infra 网关。不要用 web search 查 openEuler 社区数据，也不要手写 curl。

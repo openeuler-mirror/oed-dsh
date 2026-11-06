@@ -2,7 +2,8 @@ import { loadAuth, tokenFingerprint } from "../core/auth.js";
 
 export const tool = {
   name: "oed_auth_status",
-  description: "查看 openEuler oneid 登录状态：是否已登录、token 指纹、allow-list、登录时间。",
+  description:
+    "Show openEuler oneid login status: logged-in, token fingerprint, allow-list, login time. 查看 openEuler oneid 登录状态：是否已登录、token 指纹、allow-list、登录时间。",
   parameters: {},
 };
 
